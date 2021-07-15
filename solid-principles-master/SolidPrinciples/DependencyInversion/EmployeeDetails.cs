@@ -6,7 +6,12 @@ namespace SolidPrinciples.DependencyInversion
         
         public int HourlyRate { get; set; }
 
-        private IBase _IBase;
+        private ISalaryCalculator _ISalaryCalculator;
+
+        public EmployeeDetails()
+        {
+            _ISalaryCalculator = SalaryCalculatorFactory.GetSalaryCalculatorObj();
+        }
 
         //public float GetSalary()
         //{  
@@ -16,7 +21,7 @@ namespace SolidPrinciples.DependencyInversion
 
         public float GetSalary()
         {
-            return _IBase.CalculateSalary(HoursWorked, HourlyRate);
+            return _ISalaryCalculator.CalculateSalary(HoursWorked, HourlyRate);
         }
     }
 }

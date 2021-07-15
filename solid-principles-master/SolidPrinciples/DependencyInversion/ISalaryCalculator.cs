@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SolidPrinciples.DependencyInversion
 {
-    interface IBase
+    interface ISalaryCalculator
     {
         float CalculateSalary(int hoursWorked, float hourlyRate);
     }
