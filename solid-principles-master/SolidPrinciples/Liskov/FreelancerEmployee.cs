@@ -8,10 +8,5 @@ namespace SolidPrinciples.Liskov
         {
             return base.GetProjectDetails(employeeId);
         }
-        
-        public override string GetEmployeeDetails(int employeeId)
-        {
-            return base.GetEmployeeDetails(employeeId);
-        }
     }
 }
